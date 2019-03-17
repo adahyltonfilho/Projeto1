@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -77,6 +77,7 @@
                             display: inline-block;
 
                         }
+
                         a.posicao2 {
                             position: absolute;
                             right: 30px;
@@ -122,8 +123,8 @@
                             text-decoration: none;
                         }
                     </style>
-                        <a class="posicao" href="#" class="teste"><i class="material-icons">exit_to_app</i></a>
-                        <a class="posicao2" href="#" class="teste"> Sair</a>
+                    <a class="posicao" href="#" class="teste"><i class="material-icons">exit_to_app</i></a>
+                    <a class="posicao2" href="#" class="teste"> Sair</a>
 
                 </ul>
             </div>
@@ -151,7 +152,7 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MÓDULOS</li>
-                    <li class="active">
+                    <li>
                         <a href="home.html">
                             <i class="material-icons">home</i>
                             <span>Dashboard</span>
@@ -163,15 +164,12 @@
                             <span>Cadastro de Perguntas</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="ListaUsuarios.html">
                             <i class="material-icons">person</i>
                             <span>Cadastro de Usuários</span>
                         </a>
                     </li>
-
-
-
                     <li>
                         <a href="ListaResposta.html">
                             <i class="material-icons">question_answer</i>
@@ -200,9 +198,83 @@
 
     <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>DASHBOARD</h2>
+            <!-- Bordered Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Usuários Cadastrados
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome </th>
+                                        <th>E-Mail</th>
+                                        <th>Editar</th>
+                                        <th>Excluir</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                        <td></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Larry</td>
+                                        <td>Jellybean</td>
+                                        <td>@lajelly</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Larry</td>
+                                        <td>Kikat</td>
+                                        <td>@lakitkat</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- #END# Bordered Table -->
 
 
 
