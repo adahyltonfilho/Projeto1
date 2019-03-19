@@ -1,0 +1,3 @@
+CREATE TABLE `enem`.`Perguntas` ( `ID` INT NOT NULL AUTO_INCREMENT , `Pergunta` VARCHAR(100000) NOT NULL , `Dificuldade` INT NOT NULL , `AreaConhecimento` INT NOT NULL , `RespA` VARCHAR(100000) NOT NULL , `RespB` VARCHAR(100000) NOT NULL , `RespC` VARCHAR(100000) NOT NULL , `RespD` VARCHAR(100000) NOT NULL , `RespE` VARCHAR(100000) NOT NULL , `UsuarioCadastrou` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB; 
+go
+INSERT INTO `perguntas`( `Pergunta`, `Dificuldade`, `AreaConhecimento`, `RespA`, `RespB`, `RespC`, `RespD`, `RespE`, `UsuarioCadastrou`) VALUES ('Teste de Pergunta','Teste de Dificuldade','Teste de Area de Conhecimento','Teste de Reposta A','Teste de Resposta B','Teste de Resposta C','Teste de Resposta D','Teste de Resposta E','1')

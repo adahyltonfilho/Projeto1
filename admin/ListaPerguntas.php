@@ -1,3 +1,16 @@
+<?php
+//iniciando a conexão com o banco de dados 
+$cx = mysqli_connect("127.0.0.1", "root", "");
+
+//selecionando o banco de dados 
+$db = mysqli_select_db($cx, "Enem");
+
+//criando a query de consulta à tabela criada 
+$sql = mysqli_query($cx, "SELECT * FROM Perguntas") or die( 
+  mysqli_error($cx) //caso haja um erro na consulta 
+);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,8 +23,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
-        type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
@@ -60,8 +72,7 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="home.html">Projeto Enem</a>
             </div>
@@ -204,12 +215,11 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                               Perguntas Cadastradas
+                                Perguntas Cadastradas
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
@@ -225,9 +235,9 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Título </th>
-                                        <th>Pergunta</th>
-                                        <th>Dificuldade </th>
+                                        <th>Pergunta </th>
+                                        <th>Dificuldade</th>
+                                        <th>Area do Conhecimento </th>
                                         <th>% de Acertos</th>
                                         <th>Área do Conhecimento</th>
                                         <th>Editar</th>
@@ -235,57 +245,44 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php while($aux = mysqli_fetch_assoc($sql)) { ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td ><?php
+                                           echo $aux["ID"]
+                                        ?></td>
+                                        
 
+                                        <td><?php
+                                           echo $aux["Pergunta"]
+                                        ?></td>
+
+                                        <td><?php
+                                           echo $aux["Dificuldade"]
+                                        ?></td>
+
+                                        <td><?php
+                                           echo $aux["ID"]
+                                        ?>
+                                        </td>
+                                        <td><?php
+                                           echo $aux["ID"]
+                                        ?>
+                                        </td>
+                                        <td><?php
+                                           echo $aux["ID"]
+                                        ?>
+                                        </td>
+                                        <td><?php
+                                           echo $aux["ID"]
+                                        ?>
+                                        
+                                        <td><?php
+                                           echo $aux["ID"]
+                                        ?>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry</td>
-                                        <td>Jellybean</td>
-                                        <td>@lajelly</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Larry</td>
-                                        <td>Kikat</td>
-                                        <td>@lakitkat</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    <?php
+                                }?>
                                 </tbody>
                             </table>
                         </div>
@@ -339,4 +336,4 @@
     <script src="js/demo.js"></script>
 </body>
 
-</html>
+</html> 
