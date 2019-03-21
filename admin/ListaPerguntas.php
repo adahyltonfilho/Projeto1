@@ -1,14 +1,14 @@
-<?php
-//iniciando a conexão com o banco de dados 
-$cx = mysqli_connect("127.0.0.1", "root", "");
+    <?php
+    //iniciando a conexão com o banco de dados 
+    $cx = mysqli_connect("127.0.0.1", "root", "");
 
-//selecionando o banco de dados 
-$db = mysqli_select_db($cx, "Enem");
+    //selecionando o banco de dados 
+    $db = mysqli_select_db($cx, "Enem");
 
-//criando a query de consulta à tabela criada 
-$sql = mysqli_query($cx, "SELECT * FROM Perguntas") or die( 
-  mysqli_error($cx) //caso haja um erro na consulta 
-);
+    //criando a query de consulta à tabela criada 
+    $sql = mysqli_query($cx, "SELECT * FROM Perguntas") or die( 
+    mysqli_error($cx) //caso haja um erro na consulta 
+    );
 ?>
 
 <!DOCTYPE html>
@@ -170,7 +170,7 @@ $sql = mysqli_query($cx, "SELECT * FROM Perguntas") or die(
                         </a>
                     </li>
                     <li class="active">
-                        <a href="ListaPerguntas.html">
+                        <a href="ListaPerguntas.php">
                             <i class="material-icons">help</i>
                             <span>Cadastro de Perguntas</span>
                         </a>
@@ -234,14 +234,13 @@ $sql = mysqli_query($cx, "SELECT * FROM Perguntas") or die(
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Pergunta </th>
-                                        <th>Dificuldade</th>
-                                        <th>Area do Conhecimento </th>
-                                        <th>% de Acertos</th>
-                                        <th>Área do Conhecimento</th>
-                                        <th>Editar</th>
-                                        <th>Excluir</th>
+                                        <th align= "center">ID</th>
+                                        <th align= "center">Pergunta </th>
+                                        <th align= "center">Dificuldade</th>
+                                        <th align= "center">Area do Conhecimento </th>
+                                        <th align= "center">% de Acertos</th>
+                                        <th align= "center">Editar</th>
+                                        <th align= "center">Excluir</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -268,17 +267,15 @@ $sql = mysqli_query($cx, "SELECT * FROM Perguntas") or die(
                                            echo $aux["ID"]
                                         ?>
                                         </td>
-                                        <td><?php
-                                           echo $aux["ID"]
-                                        ?>
-                                        </td>
-                                        <td><?php
-                                           echo $aux["ID"]
-                                        ?>
+                                        <td align= "center">                                        
+                                        <button type="button" class="btn btn-xs btn-info waves-effect">
+                                        <i class="material-icons">edit</i>
+                                        </button>
                                         
-                                        <td><?php
-                                           echo $aux["ID"]
-                                        ?>
+                                        <td align= "center">
+                                        <button type="button" class="btn btn-xs btn-danger waves-effect mdl-doc-remove">
+                                            <i class="material-icons">delete</i>
+                                        </button>
                                         </td>
                                     </tr>
                                     <?php
